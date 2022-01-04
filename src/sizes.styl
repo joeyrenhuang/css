@@ -1,0 +1,63 @@
+unit = .01rem
+mgs = {
+  mg: margin,
+  ml: margin-left,
+  mr: margin-right,
+  mt: margin-top,
+  mb: margin-bottom,
+}
+pds = {
+  pd: padding,
+  pt: padding-top,
+  pb: padding-bottom,
+  pl: padding-left,
+  pr: padding-right,
+}
+pos = {
+  p_l: left,
+  p_r: right,
+  p_t: top,
+  p_b: bottom,
+}
+ft = {
+  ft: font-size,
+}
+whs = {
+  w: width,
+  h: height,
+  mw: max-width,
+  mh: max-height,
+}
+
+
+for x in (-20..500)
+
+  // negtive css attribitue values 
+  if x < 0 and x > -20
+    for k, v in merge(mgs, pos)
+      .{k}_{x}
+        {v} x * unit
+  
+  // positive css attribute values
+  if x < 21 and x > -1
+    for k, v in merge(mgs, pds, pos, ft)
+      .{k}_{x}
+        {v} x * unit
+  
+  if (x > 20 and x < 51 and x % 2 == 0) or (x > 50 and x < 101 and x % 5 == 0) or (x > 100 and x < 301 and  x % 10 == 0) or ( x > 300 and x % 50 == 0)
+    for k, v in whs
+      .{k}_{x}
+        {v} x * unit
+    
+// opacity      
+for k, v in (0..10)
+  .o_{x}
+    opacity x * 10 + '%'
+    
+// z-index   
+for k, v in (0..10)
+  .z_{x}
+    z-index x
+for k, v in (9990..9999)
+  .z_{x}
+    z-index x

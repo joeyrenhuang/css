@@ -1,0 +1,22 @@
+{
+  "name": "common-stylus",
+  "version": "1.0.0",
+  "description": "initial global styles",
+  "main": "src/index.stylus",
+  "scripts": {
+    "dev": "stylus -w src/index.styl -o ./lib/index.min.css",
+    "build": "stylus src/index.styl -o ./lib/index.min.css"
+  },
+  "keywords": [
+    "initial",
+    "reset",
+    "common",
+    "css",
+    "stylus"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "stylus": "^0.56.0"
+  }
+}
